@@ -22,12 +22,9 @@ jz _end
 pop eax
 call atoi
 
-mov ebx, 8
-mul ebx
-sub eax, 3
+call _calculate_fx
 
 add esi, eax
-
 loop next
 
 _end: 
@@ -37,3 +34,8 @@ mov eax, esi
 call iprintLF
 call quit
 
+_calculate_fx:
+mov ebx, 8
+mul ebx
+sub eax, 3
+ret
